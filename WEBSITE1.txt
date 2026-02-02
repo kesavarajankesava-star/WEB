@@ -1,0 +1,136 @@
+structure
+
+1,using variable
+
+#include<stdio.h>
+#include<string.h>
+struct employee
+{
+    int id;
+    char name[20];
+    float salary;
+
+};
+int main()
+{
+    struct employee stude;
+    int id;
+    char name[20];
+    float salary;
+    scanf("%d",&id);
+    stude.id=id;
+    scanf("%s",name);
+    strcpy(stude.name,name);
+    scanf("%f",&salary);
+    stude.salary=salary;
+
+    printf("employee id is:%d\n",stude.id);
+    printf("name is:%s\n",stude.name);
+    printf("salary is:%f",stude.salary);
+}
+
+output
+
+10
+ethisa
+60000.0
+employee id is:10
+name is:ethisa
+salary is:60000.000000
+
+2,using pointer
+
+#include<stdio.h>
+#include<string.h>
+struct employee
+{
+    int id;
+    char name[20];
+    float salary;
+
+};
+int main()
+{
+    struct employee stude;
+    struct employee *s=&stude;
+    int id;
+    char name[20];
+    float salary;
+    scanf("%d",&id);
+    s->id=id;
+    scanf("%s",name);
+    strcpy(s->name,name);
+    scanf("%f",&salary);
+    s->salary=salary;
+
+    printf("employee id is:%d\n",s->id);
+    printf("name is:%s\n",s->name);
+    printf("salary is:%f",s->salary);
+}
+
+output
+
+10
+deepzz
+6000
+employee id is:10
+name is:deepzz
+salary is:6000.000000
+
+3,struc of array
+
+#include<stdio.h>
+#include<stdlib.h>
+#include<string.h>
+struct employee
+{
+    int id;
+    char name[20];
+    float salary;
+};
+int main()
+{
+    struct employee stude[3];
+    int itr;
+    int id;
+    char name[20];
+    float salary;
+    for(itr=0;itr<3;itr+=1)
+    {
+        scanf("%d",&id);
+        stude[itr].id=id;
+        scanf("%s",name);
+        strcpy(stude[itr].name,name);
+        scanf("%f",&salary);
+        stude[itr].salary=salary;
+    }
+    for(itr=0;itr<3;itr+=1)
+    {
+      printf("%d th employee's data :\n",itr+1);
+      printf("employee id is:%d\n",stude[itr].id);
+      printf("name is:%s\n",stude[itr].name);
+      printf("salary is:%.2f",stude[itr].salary);
+    }
+}
+
+
+output
+12
+mona
+12
+23
+deepzz
+13
+10
+ethisha
+14
+1 th employee's data :
+employee id is:12
+name is:mona
+salary is:12.002 th employee's data :
+employee id is:23
+name is:deepzz
+salary is:13.003 th employee's data :
+employee id is:10
+name is:ethisha
+salary is:14.00
